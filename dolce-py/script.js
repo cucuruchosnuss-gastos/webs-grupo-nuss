@@ -132,7 +132,7 @@
         if (ok) ok.style.display = "block";
       }).catch(function () {
         if (btn) { btn.disabled = false; btn.textContent = "Enviar mensaje"; }
-        alert("No pudimos enviar el mensaje. Proba de nuevo o escribinos por WhatsApp.");
+        alert("No pudimos enviar el mensaje. Probá de nuevo o escribinos por WhatsApp.");
       });
     });
   }
