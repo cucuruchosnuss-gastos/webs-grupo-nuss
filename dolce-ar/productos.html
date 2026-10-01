@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Catálogo completo — Dolce Pasta</title>
+<meta name="description" content="Catálogo completo de Dolce Pasta: barquillos, cucuruchones, capelinas, obleas, soft, tacitas, cubanones, cono americano, dolce rolly, bocón y la línea de pasta. Premium y personalizables con tu marca." />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Dolce Pasta" />
+<link rel="canonical" href="https://www.dolcepasta.com.ar/Productos.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Dolce Pasta" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:title" content="Catálogo completo — Dolce Pasta" />
+<meta property="og:description" content="Barquillos, cucuruchones, capelinas, obleas, cubanones, bocón y la línea de pasta. Todos personalizables con tu marca." />
+<meta property="og:url" content="https://www.dolcepasta.com.ar/Productos.html" />
+<meta property="og:image" content="https://www.dolcepasta.com.ar/assets/familia-dolce-pasta.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.dolcepasta.com.ar/assets/familia-dolce-pasta.jpg" />
+<meta name="theme-color" content="#161210" />
+<link rel="icon" href="assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .cat-head { padding-top: clamp(7rem, 13vh, 9.5rem); padding-bottom: clamp(1.8rem, 4vw, 2.6rem); position: relative; overflow: hidden; }
+  .cat-head::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(60% 80% at 85% 0%, oklch(0.5 0.12 52 / 0.16), transparent 70%); }
+  .cat-breadcrumb { font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.08em; color: var(--muted); display: flex; gap: 0.5rem; align-items: center; position: relative; z-index: 2; }
+  .cat-breadcrumb a { color: var(--gold); }
+  .cat-head-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem 2.5rem; flex-wrap: wrap; position: relative; z-index: 2; margin-top: 1rem; }
+  .cat-head h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.4rem, 1.5rem + 3.4vw, 4.6rem); line-height: 1.02; letter-spacing: -0.02em; margin: 0.7rem 0 0; color: var(--cream); }
+  .cat-cats { display: flex; flex-wrap: wrap; gap: 0.6rem; position: relative; z-index: 2; }
+  .cat-chip { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.04em; padding: 0.5rem 1rem; border: 1px solid var(--line-soft); border-radius: 100px; color: var(--cream); transition: .25s; }
+  .cat-chip:hover { background: var(--gold); color: var(--noir); border-color: var(--gold); }
+
+  /* Banner de línea (corte de categoría) */
+  .line-banner { padding-block: clamp(2.6rem, 5vw, 4rem); position: relative; overflow: hidden; border-block: 1px solid var(--line); }
+  .line-banner .ln-inner { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem 3rem; flex-wrap: wrap; position: relative; z-index: 2; }
+  .line-banner h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 1.3rem + 2.8vw, 3.6rem); line-height: 1; letter-spacing: -0.015em; margin-top: 0.7rem; color: var(--cream); }
+  .line-banner p { color: var(--cream-dim); max-width: 46ch; }
+  .line-banner .ln-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+  .ln-tag { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.06em; padding: 0.4rem 0.8rem; border-radius: 100px; border: 1px solid var(--line-soft); color: var(--cream-dim); }
+  .line-banner.dulces { background: linear-gradient(120deg, oklch(0.25 0.04 68) 0%, var(--noir) 62%); }
+  .line-banner.dulces::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--gold), var(--orange) 40%, transparent 72%); }
+  .line-banner.pasta { background: linear-gradient(120deg, oklch(0.22 0.018 245) 0%, var(--noir-3) 62%); }
+  .line-banner.pasta .sec-label .n, .line-banner.pasta .ln-tag { color: var(--steel); }
+  .line-banner.pasta::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--steel), transparent 60%); }
+
+  .cat-section { padding-block: clamp(1rem, 2vw, 2rem) clamp(2rem, 4vw, 3rem); }
+  /* La línea de PASTA va sobre fondo crema para diferenciarla del resto */
+  .cat-section.pasta-bg {
+    /* amarillo pastel mantequilla + textura de trama sutil (papel) */
+    background:
+      repeating-linear-gradient(45deg, oklch(0.50 0.09 78 / 0.05) 0 1px, transparent 1px 8px),
+      repeating-linear-gradient(-45deg, oklch(0.50 0.09 78 / 0.04) 0 1px, transparent 1px 8px),
+      linear-gradient(180deg, oklch(0.918 0.052 96) 0%, oklch(0.892 0.058 94) 100%);
+    /* remapeo de tokens a tema claro SOLO dentro de esta sección */
+    --cream:     oklch(0.300 0.030 70);
+    --cream-dim: oklch(0.395 0.028 72);
+    --muted:     oklch(0.530 0.032 78);
+    --line:      oklch(0.840 0.040 92);
+    --line-soft: oklch(0.770 0.046 90);
+    --gold:      oklch(0.610 0.140 70);
+    --gold-deep: oklch(0.550 0.135 66);
+  }
+  .cat-section.pasta-bg .catalog { border-top-color: oklch(0.78 0.046 90); }
+  .cat-section.pasta-bg .plate {
+    background: radial-gradient(circle at 50% 32%, oklch(0.962 0.040 97), oklch(0.892 0.056 93) 76%);
+    border-color: oklch(0.78 0.046 90);
+  }
+  .cat-section.pasta-bg .plate .glow { background: radial-gradient(circle at 50% 22%, oklch(0.80 0.13 70 / 0.18), transparent 62%); }
+  /* artilugio: sombra más marcada + sombra de contacto para despegar el producto crema del fondo claro */
+  .cat-section.pasta-bg .prod-plate img {
+    filter:
+      drop-shadow(0 18px 22px oklch(0.40 0.06 58 / 0.34))
+      drop-shadow(0 4px 6px oklch(0.40 0.06 58 / 0.30));
+  }
+  .cat-section.pasta-bg .prod-plate.placeholder {
+    background: repeating-linear-gradient(135deg, oklch(0.886 0.052 94), oklch(0.886 0.052 94) 12px, oklch(0.850 0.056 92) 12px, oklch(0.850 0.056 92) 24px);
+  }
+  .cat-section.pasta-bg .ph-label { background: oklch(0.950 0.040 96); color: var(--gold); border-color: oklch(0.78 0.046 90); }
+  .cat-section.pasta-bg .tag-soon { color: oklch(0.46 0.030 76); background: oklch(0.886 0.052 94); border-color: oklch(0.78 0.046 90); }
+  .cta-final { background: var(--noir-3); border-top: 1px solid var(--line); }
+</style>
+</head>
+<body>
+
+<!-- ⚠️ WhatsApp real: 543513125236 · Email real: dolcepasta.ar@gmail.com · Instagram: @dolcepasta.ar (cuenta a crear) -->
+
+<!-- ============ NAV ============ -->
+<header class="nav scrolled" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand" aria-label="Dolce Pasta — inicio">
+      <img class="brand-logo" src="assets/logo-dolce-pasta.webp" alt="Dolce Pasta · Obleas Dulces" style="height:50px;width:auto" />
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="Productos.html">Productos</a>
+      <a href="index.html#personalizacion">Personalización</a>
+      <a href="index.html#nosotros">Nosotros</a>
+      <a href="index.html#cobertura">Envíos</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://wa.me/543513125236?text=%C2%A1Hola%20Dolce%20Pasta!%20Quer%C3%ADa%20hacer%20una%20consulta%20sobre%20los%20barquillos%20para%20mi%20helader%C3%ADa." target="_blank" rel="noopener" class="btn btn-gold">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.13c-.25.69-1.45 1.32-1.99 1.36-.53.05-1.03.24-3.48-.73-2.93-1.16-4.8-4.15-4.95-4.34-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.26-.29.57-.36.76-.36.19 0 .38 0 .54.01.18.01.41-.07.64.49.25.6.84 2.07.91 2.22.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.93 1.94 1.22 2.22 1.36.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.61.76 1.89.9.28.14.46.21.53.32.07.12.07.66-.18 1.34Z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- ============ ENCABEZADO (compacto) ============ -->
+<section class="cat-head" data-screen-label="Catálogo — Encabezado">
+  <div class="wrap">
+    <div class="cat-breadcrumb reveal"><a href="index.html">Inicio</a><span>/</span><span>Catálogo</span></div>
+    <div class="cat-head-row">
+      <div>
+        <span class="sec-label reveal" style="--d:.04s"><span class="n">(00)</span> Catálogo completo</span>
+        <h1 class="reveal" style="--d:.08s">Todo lo que fabricamos.</h1>
+      </div>
+      <div class="cat-cats reveal" style="--d:.16s">
+        <a href="#dulces" class="cat-chip">Cucuruchos Dulces</a>
+        <a href="#pasta" class="cat-chip">Cucuruchos de Pasta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BANNER: DULCES ============ -->
+<section class="line-banner dulces" id="dulces" data-screen-label="Banner — Dulces">
+  <div class="wrap ln-inner">
+    <div>
+      <span class="sec-label reveal"><span class="n">01—10</span> Línea tradicional</span>
+      <h2 class="reveal" style="--d:.05s">Cucuruchos Dulces</h2>
+    </div>
+    <p class="reveal" style="--d:.1s">Nuestra receta de siempre: oblea dulce, crocante y con sabor. La base de toda heladería.</p>
+  </div>
+</section>
+
+<!-- ============ DULCES (filas editoriales) ============ -->
+<section class="cat-section">
+  <div class="wrap">
+    <div class="catalog">
+
+      <!-- 01 Barquillo -->
+      <article class="prod-row reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">01</span><div>
+            <div class="prod-tags"><span class="tag-star">★ El más vendido</span></div>
+            <h3 class="prod-name">Barquillo</h3></div></div>
+          <p class="prod-sub">Cono recto y crocante, en tres medidas. Presentación en blister x 4.</p>
+          <div class="prod-variants" data-variants>
+            <button class="variant-pill active" data-d="Ø 37 mm" data-h="157 mm" data-u="320 u" data-desc="El más finito de la línea, N° 35. Ideal para cono simple. Blister x 4.">N° 35</button>
+            <button class="variant-pill" data-d="Ø 42 mm" data-h="157 mm" data-u="252 u" data-desc="Medida intermedia, N° 40. La más pedida por las heladerías. Blister x 4.">N° 40</button>
+            <button class="variant-pill" data-d="Ø 47 mm" data-h="157 mm" data-u="216 u" data-desc="El más ancho, N° 45. Para porciones generosas. Blister x 4.">N° 45</button>
+          </div>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Diámetro</span><span class="v" data-spec="d">Ø 37 mm</span></div>
+            <div class="spec-cell"><span class="k">Altura</span><span class="v" data-spec="h">157 mm</span></div>
+            <div class="spec-cell"><span class="k">Unidades</span><span class="v" data-spec="u">320 u</span></div>
+            <div class="spec-cell"><span class="k">Presentación</span><span class="v">Blister x 4</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Opcional: conos personalizados</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate"><span class="glow"></span><img class="tall" src="assets/barquillo.webp" loading="lazy" width="533" height="1300" alt="Barquillo Dolce Pasta" /><figcaption class="fig-tag"><b>Fig. 01</b> — Barquillo</figcaption></figure></div>
+      </article>
+
+      <!-- 02 Cucuruchón -->
+      <article class="prod-row flip reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">02</span><div>
+            <div class="prod-tags"><span class="tag-star">★ Más vendido</span></div>
+            <h3 class="prod-name">Cucuruchón</h3></div></div>
+          <p class="prod-sub">El clásico para cono de helado, en cuatro tamaños.</p>
+          <div class="prod-variants" data-variants>
+            <button class="variant-pill" data-d="Ø 56 mm" data-h="130 mm" data-u="320 u / caja" data-desc="El más chico, Mini. Para porciones justas.">Mini</button>
+            <button class="variant-pill" data-d="Ø 60 mm" data-h="145 mm" data-u="256 u / caja" data-desc="Tamaño Chico, equilibrado para el día a día.">Chico</button>
+            <button class="variant-pill active" data-d="Ø 66 mm" data-h="155 mm" data-u="240 u / caja" data-desc="El clásico Grande, el más elegido para cono de helado.">Grande</button>
+            <button class="variant-pill" data-d="Ø 70 mm" data-h="160 mm" data-u="224 u / caja" data-desc="Standard, el más grande. Para porciones generosas.">Standard</button>
+          </div>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Diámetro</span><span class="v" data-spec="d">Ø 66 mm</span></div>
+            <div class="spec-cell"><span class="k">Altura</span><span class="v" data-spec="h">155 mm</span></div>
+            <div class="spec-cell"><span class="k">Unidades</span><span class="v" data-spec="u">240 u / caja</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Opcional: conos personalizados</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate"><span class="glow"></span><img class="tall" src="assets/cucurucho.webp" loading="lazy" width="462" height="1000" alt="Cucuruchón Dolce Pasta" /><figcaption class="fig-tag"><b>Fig. 02</b> — Cucuruchón</figcaption></figure></div>
+      </article>
+
+      <!-- 03 Capelina -->
+      <article class="prod-row reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">03</span><div>
+            <div class="prod-tags"><span class="tag-star">★ Más vendido</span></div>
+            <h3 class="prod-name">Capelina</h3></div></div>
+          <p class="prod-sub">Canastita de oblea para copas, postres y ensaladas de fruta.</p>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Diámetro</span><span class="v">Ø 120 mm</span></div>
+            <div class="spec-cell"><span class="k">Altura</span><span class="v">45 mm</span></div>
+            <div class="spec-cell"><span class="k">Unidades</span><span class="v">80 u / caja</span></div>
+            <div class="spec-cell"><span class="k">Pallet</span><span class="v">60 cajas</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Ideal para postres y copas</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate"><span class="glow"></span><img class="wide" src="assets/capelina.webp" loading="lazy" width="580" height="406" alt="Capelina Dolce Pasta" /><figcaption class="fig-tag"><b>Fig. 03</b> — Capelina</figcaption></figure></div>
+      </article>
+
+      <!-- 04 Oblea -->
+      <article class="prod-row flip reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">04</span><div>
+            <h3 class="prod-name">Oblea</h3></div></div>
+          <p class="prod-sub">Oblea dulce para decoración y armado. Versátil para múltiples usos.</p>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Unidades</span><span class="v">55 × 8 / caja</span></div>
+            <div class="spec-cell"><span class="k">Pallet</span><span class="v">180 cajas</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Versátil para múltiples usos</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate"><span class="glow"></span><img class="wide" src="assets/oblea.webp" loading="lazy" width="500" height="500" alt="Oblea dulce Dolce Pasta" /><figcaption class="fig-tag"><b>Fig. 04</b> — Oblea</figcaption></figure></div>
+      </article>
+
+      <!-- 05 Soft -->
+      <article class="prod-row reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">05</span><div>
+            <h3 class="prod-name">Soft</h3></div></div>
+          <p class="prod-sub">Cono ideal para helado soft / máquina.</p>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Boca</span><span class="v">Ø 30 mm</span></div>
+            <div class="spec-cell"><span class="k">Altura</span><span class="v">142 mm</span></div>
+            <div class="spec-cell"><span class="k">Unidades</span><span class="v">224 u / caja</span></div>
+            <div class="spec-cell"><span class="k">Pallet</span><span class="v">42 cajas</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Ideal para helado soft</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate"><span class="glow"></span><img class="tall" style="padding:9% 14%" src="assets/soft-c.webp" loading="lazy" width="263" height="722" alt="Cono Soft Dolce Pasta" /><figcaption class="fig-tag"><b>Fig. 05</b> — Soft</figcaption></figure></div>
+      </article>
+
+      <!-- 06 Tacita 250 -->
+      <article class="prod-row flip reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">06</span><div>
+            <h3 class="prod-name">Tacita 250</h3></div></div>
+          <p class="prod-sub">Vasito de oblea dulce para copas y postres.</p>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Diámetro int.</span><span class="v">Ø 95 mm</span></div>
+            <div class="spec-cell"><span class="k">Altura</span><span class="v">60 mm</span></div>
+            <div class="spec-cell"><span class="k">Unidades</span><span class="v">96 u / caja</span></div>
+            <div class="spec-cell"><span class="k">Pallet</span><span class="v">54 cajas</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Ideal para postres y copas</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate"><span class="glow"></span><img src="assets/tacita-250.webp" loading="lazy" width="1000" height="1000" alt="Tacita 250 Dolce Pasta" /><figcaption class="fig-tag"><b>Fig. 06</b> — Tacita 250</figcaption></figure></div>
+      </article>
+
+      <!-- 07 Cubanón -->
+      <article class="prod-row reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">07</span><div>
+            <h3 class="prod-name">Cubanón</h3></div></div>
+          <p class="prod-sub">Tubo de oblea crocante, en tres modelos.</p>
+          <div class="prod-variants" data-variants>
+            <button class="variant-pill active" data-d="Ø 22 mm" data-h="100 mm" data-u="180 u / caja" data-p="42 cajas">Chico</button>
+            <button class="variant-pill" data-d="Ø 30 mm" data-h="140 mm" data-u="168 u / caja" data-p="42 cajas">Grande</button>
+            <button class="variant-pill" data-d="Ø 22 mm" data-h="140 mm" data-u="130 u / caja" data-p="60 cajas">Canoli</button>
+          </div>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Diámetro int.</span><span class="v" data-spec="d">Ø 22 mm</span></div>
+            <div class="spec-cell"><span class="k">Largo</span><span class="v" data-spec="h">100 mm</span></div>
+            <div class="spec-cell"><span class="k">Unidades</span><span class="v" data-spec="u">180 u / caja</span></div>
+            <div class="spec-cell"><span class="k">Pallet</span><span class="v" data-spec="p">42 cajas</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Ideal para postres y rellenos</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate"><span class="glow"></span><img class="tall" src="assets/cubanon.webp" loading="lazy" width="462" height="1000" alt="Cubanón Dolce Pasta" /><figcaption class="fig-tag"><b>Fig. 07</b> — Cubanón</figcaption></figure></div>
+      </article>
+
+      <!-- 08 Cono Americano -->
+      <article class="prod-row flip reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">08</span><div>
+            <h3 class="prod-name">Cono Americano</h3></div></div>
+          <p class="prod-sub">Cono recto de oblea, alto y firme.</p>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Diámetro</span><span class="v">Ø 45 mm</span></div>
+            <div class="spec-cell"><span class="k">Altura</span><span class="v">120 mm</span></div>
+            <div class="spec-cell"><span class="k">Unidades</span><span class="v">360 u</span></div>
+            <div class="spec-cell"><span class="k">Pallet</span><span class="v">60 cajas</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Opcional: conos personalizados</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate"><span class="glow"></span><img class="tall" src="assets/cono-americano.webp" loading="lazy" width="1000" height="1000" alt="Cono Americano Dolce Pasta" /><figcaption class="fig-tag"><b>Fig. 08</b> — Cono Americano</figcaption></figure></div>
+      </article>
+
+      <!-- 09 Dolce Rolly -->
+      <article class="prod-row reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">09</span><div>
+            <h3 class="prod-name">Dolce Rolly</h3></div></div>
+          <p class="prod-sub">Rollito crocante rayado, ideal como topping y snack.</p>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Diámetro</span><span class="v">Ø 12 mm</span></div>
+            <div class="spec-cell"><span class="k">Largo</span><span class="v">80 mm</span></div>
+            <div class="spec-cell"><span class="k">Bandeja</span><span class="v">125 u</span></div>
+            <div class="spec-cell"><span class="k">Por caja</span><span class="v">8 bandejas</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Ideal como topping y snack</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate"><span class="glow"></span><img src="assets/dolce-rolly.webp" loading="lazy" width="1000" height="1000" alt="Dolce Rolly Dolce Pasta" /><figcaption class="fig-tag"><b>Fig. 09</b> — Dolce Rolly</figcaption></figure></div>
+      </article>
+
+      <!-- 10 Bocón (nuevo) -->
+      <article class="prod-row flip reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">10</span><div>
+            <div class="prod-tags"><span class="tag-new">● Nuevo</span></div>
+            <h3 class="prod-name">Bocón</h3></div></div>
+          <p class="prod-sub">Nuestro cono de boca ancha, generoso para grandes porciones de helado.</p>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Boca</span><span class="v">Ø 80 mm</span></div>
+            <div class="spec-cell"><span class="k">Largo</span><span class="v">140 mm</span></div>
+            <div class="spec-cell"><span class="k">Unidades</span><span class="v">66 u / caja</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Opcional: conos personalizados</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate"><span class="glow"></span><img class="tall" style="padding:17% 28%" src="assets/bocon.webp" loading="lazy" width="766" height="971" alt="Bocón — cono de boca ancha Dolce Pasta" /><figcaption class="fig-tag"><b>Fig. 10</b> — Bocón</figcaption></figure></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ BANNER: PASTA ============ -->
+<section class="line-banner pasta" id="pasta" data-screen-label="Banner — Pasta">
+  <div class="wrap ln-inner">
+    <div>
+      <span class="sec-label reveal"><span class="n">01—06</span> Nueva variedad</span>
+      <h2 class="reveal" style="--d:.05s">Cucuruchos de Pasta</h2>
+    </div>
+    <div class="reveal" style="--d:.1s">
+      <p>Línea nueva de conos, tacitas y vasos elaborados con pasta. Comestibles, firmes y sustentables.</p>
+      <div class="ln-tags">
+        <span class="ln-tag">Comestible</span>
+        <span class="ln-tag">Sustentable</span>
+        <span class="ln-tag">Sin descartables</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PASTA (filas editoriales) ============ -->
+<section class="cat-section pasta-bg">
+  <div class="wrap">
+    <div class="catalog">
+
+      <!-- 01 Vaso 125 -->
+      <article class="prod-row reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">01</span><div>
+            <h3 class="prod-name">Vaso 125</h3></div></div>
+          <p class="prod-sub">Vaso comestible de pasta para helado o eventos.</p>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Capacidad</span><span class="v">125 ml</span></div>
+            <div class="spec-cell"><span class="k">Unidades</span><span class="v">296 u / caja</span></div>
+            <div class="spec-cell"><span class="k">Pallet</span><span class="v">70 cajas</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Comestible y sustentable</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate"><span class="glow"></span><img style="padding:5% 7%" src="assets/vaso-125.webp" loading="lazy" width="1000" height="666" alt="Vaso 125 de pasta Dolce Pasta" /><figcaption class="fig-tag"><b>Fig. 01</b> — Vaso 125</figcaption></figure></div>
+      </article>
+
+      <!-- 02 Vaso 90 -->
+      <article class="prod-row flip reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">02</span><div>
+            <h3 class="prod-name">Vaso 90</h3></div></div>
+          <p class="prod-sub">Vaso de pasta más chico, ideal para porciones.</p>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Capacidad</span><span class="v">90 ml</span></div>
+            <div class="spec-cell"><span class="k">Unidades</span><span class="v">350 u / caja</span></div>
+            <div class="spec-cell"><span class="k">Pallet</span><span class="v">70 cajas</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Comestible y sustentable</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate"><span class="glow"></span><img style="padding:5% 7%" src="assets/vaso-90.webp" loading="lazy" width="1000" height="666" alt="Vaso 90 de pasta Dolce Pasta" /><figcaption class="fig-tag"><b>Fig. 02</b> — Vaso 90</figcaption></figure></div>
+      </article>
+
+      <!-- 03 Cono 0 -->
+      <article class="prod-row reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">03</span><div>
+            <h3 class="prod-name">Cono 0</h3></div></div>
+          <p class="prod-sub">Cono de pasta para servir helado.</p>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Por bolsa</span><span class="v">120 u</span></div>
+            <div class="spec-cell"><span class="k">Por caja</span><span class="v">1.600 u</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Envianos las medidas para detallarlo</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate"><span class="glow"></span><img class="wide" src="assets/cono-cero.webp" loading="lazy" width="1000" height="666" alt="Cono 0 de pasta Dolce Pasta" /><figcaption class="fig-tag"><b>Fig. 03</b> — Cono 0</figcaption></figure></div>
+      </article>
+
+      <!-- 04 Vaso 0 -->
+      <article class="prod-row flip reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">04</span><div>
+            <h3 class="prod-name">Vaso 0</h3></div></div>
+          <p class="prod-sub">Vaso de pasta de la línea cero.</p>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Por bolsa</span><span class="v">120 u</span></div>
+            <div class="spec-cell"><span class="k">Por caja</span><span class="v">1.800 u</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Envianos las medidas para detallarlo</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate"><span class="glow"></span><img src="assets/vaso-cero.webp" loading="lazy" width="1000" height="666" alt="Vaso 0 de pasta Dolce Pasta" /><figcaption class="fig-tag"><b>Fig. 04</b> — Vaso 0</figcaption></figure></div>
+      </article>
+
+      <!-- 05 Cono 70 (próximamente) -->
+      <article class="prod-row reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">05</span><div>
+            <div class="prod-tags"><span class="tag-soon">◷ Próximamente</span></div>
+            <h3 class="prod-name">Cono 70</h3></div></div>
+          <p class="prod-sub">Nuevo cono de pasta. En desarrollo.</p>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Disponibilidad</span><span class="v">Próximamente</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Consultá disponibilidad</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate placeholder"><span class="ph-label">Próximamente</span><figcaption class="fig-tag"><b>Fig. 05</b> — Cono 70</figcaption></figure></div>
+      </article>
+
+      <!-- 06 Taza 65 (próximamente) -->
+      <article class="prod-row flip reveal">
+        <div class="prod-body">
+          <div class="prod-head"><span class="prod-num">06</span><div>
+            <div class="prod-tags"><span class="tag-soon">◷ Próximamente</span></div>
+            <h3 class="prod-name">Taza 65</h3></div></div>
+          <p class="prod-sub">Nueva taza de pasta. En desarrollo.</p>
+          <div class="spec-strip">
+            <div class="spec-cell"><span class="k">Disponibilidad</span><span class="v">Próximamente</span></div>
+          </div>
+          <div class="prod-perso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Consultá disponibilidad</div>
+        </div>
+        <div class="prod-media"><figure class="plate prod-plate placeholder"><span class="ph-label">Próximamente</span><figcaption class="fig-tag"><b>Fig. 06</b> — Taza 65</figcaption></figure></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="section cta-final" data-screen-label="CTA">
+  <div class="wrap" style="text-align:center;max-width:760px">
+    <span class="sec-label reveal" style="justify-content:center">¿Listo para tu pedido?</span>
+    <h2 class="sec-title reveal" style="--d:.06s;margin:1rem auto 1.2rem">Armemos el pedido ideal para tu heladería.</h2>
+    <p class="lead reveal" style="--d:.12s;margin-inline:auto">Contanos qué productos te interesan y el volumen aproximado. Te asesoramos y coordinamos el envío a todo el país.</p>
+    <div class="reveal" style="--d:.18s;margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://wa.me/543513125236?text=%C2%A1Hola%20Dolce%20Pasta!%20Quer%C3%ADa%20hacer%20una%20consulta%20sobre%20los%20barquillos%20para%20mi%20helader%C3%ADa." target="_blank" rel="noopener" class="btn btn-gold btn-lg">Pedir por WhatsApp</a>
+      <a href="index.html#contacto" class="btn btn-ghost btn-lg">Dejar un mensaje</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div style="max-width:320px">
+        <img src="assets/logo-dolce-pasta.webp" loading="lazy" alt="Dolce Pasta · Obleas Dulces" style="height:58px;width:auto;margin-bottom:1rem" />
+        <p style="font-size:.95rem;line-height:1.6">Fábrica de Rosario de barquillos y obleas dulces premium para heladerías. Calidad, sabor y tu marca en cada cono.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Catálogo</h5>
+          <a href="#dulces">Cucuruchos Dulces</a>
+          <a href="#pasta">Cucuruchos de Pasta</a>
+          <a href="index.html#personalizacion">Personalización</a>
+        </div>
+        <div class="footer-col">
+          <h5>Empresa</h5>
+          <a href="index.html#nosotros">Sobre nosotros</a>
+          <a href="index.html#cobertura">Envíos</a>
+          <a href="index.html#contacto">Contacto</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contacto</h5>
+          <a href="https://wa.me/543513125236?text=%C2%A1Hola%20Dolce%20Pasta!%20Quer%C3%ADa%20hacer%20una%20consulta%20sobre%20los%20barquillos%20para%20mi%20helader%C3%ADa." target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://instagram.com/dolcepasta.ar" target="_blank" rel="noopener">Instagram</a>
+          <a href="mailto:dolcepasta.ar@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Dolce Pasta · Hecho en Argentina</span>
+      <span>Envíos a toda la Argentina y Mercosur</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLOTANTE (móvil) ============ -->
+<a class="wa-fab" href="https://wa.me/543513125236?text=%C2%A1Hola%20Dolce%20Pasta!%20Quer%C3%ADa%20hacer%20una%20consulta%20sobre%20los%20barquillos%20para%20mi%20helader%C3%ADa." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.13c-.25.69-1.45 1.32-1.99 1.36-.53.05-1.03.24-3.48-.73-2.93-1.16-4.8-4.15-4.95-4.34-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.26-.29.57-.36.76-.36.19 0 .38 0 .54.01.18.01.41-.07.64.49.25.6.84 2.07.91 2.22.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.93 1.94 1.22 2.22 1.36.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.61.76 1.89.9.28.14.46.21.53.32.07.12.07.66-.18 1.34Z"/></svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>

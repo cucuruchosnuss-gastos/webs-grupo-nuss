@@ -1,0 +1,17 @@
+# ============================================================
+# Dolce Pasta — Headers de seguridad para Netlify
+# Estos headers endurecen el sitio y dificultan ataques.
+# Netlify los aplica automáticamente si este archivo "_headers"
+# está en la raíz del sitio publicado.
+# ============================================================
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+
+# Cache largo para assets con hash de contenido (imágenes, logo)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
