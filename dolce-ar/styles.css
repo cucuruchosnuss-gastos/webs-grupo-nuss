@@ -369,6 +369,55 @@ button.variant-pill.active:hover { color: var(--noir); }
 @media (max-width: 720px) { .wa-fab { display: flex; } }
 @media (prefers-reduced-motion: reduce) { .wa-fab { animation: none; } }
 
+/* ---------- Cuestionario antes de WhatsApp ---------- */
+.qz-lock { overflow: hidden; }
+.qz { margin: auto; padding: 0; border: none; background: transparent; color: var(--cream); color-scheme: dark; width: min(580px, calc(100% - 2rem)); max-width: none; max-height: calc(100dvh - 2rem); overflow: visible; }
+.qz::backdrop { background: oklch(0.08 0.01 55 / 0.78); backdrop-filter: blur(4px); }
+.qz-panel { position: relative; background: var(--noir-2); border: 1px solid var(--line-soft); border-top-color: var(--metal-hi); border-radius: var(--r); padding: clamp(1.4rem, 3.5vw, 2.2rem); max-height: calc(100dvh - 2rem); overflow-y: auto; overscroll-behavior: contain; box-shadow: 0 40px 90px -30px #000; }
+.qz-panel::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--gold), var(--orange) 40%, transparent 72%); }
+.qz-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.qz-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.5rem, 1.2rem + 1vw, 1.9rem); line-height: 1.1; color: var(--cream); }
+.qz-close { flex: none; width: 44px; height: 44px; margin: -0.5rem -0.6rem 0 0; border-radius: var(--r); display: grid; place-items: center; color: var(--cream-dim); transition: color .2s, background .2s; }
+.qz-close:hover { color: var(--gold); background: oklch(1 0 0 / 0.04); }
+.qz-close:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.qz-close svg { width: 22px; height: 22px; }
+.qz-desc { font-size: 0.86rem; color: var(--muted); margin: 0.35rem 0 1.4rem; }
+.qz-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.qz-field { border: none; margin: 0 0 1.1rem; padding: 0; min-width: 0; }
+.qz-field > label, .qz-field legend { display: block; padding: 0; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; margin-bottom: 0.5rem; color: var(--cream-dim); }
+.qz-opcional { font-weight: 400; letter-spacing: 0.04em; text-transform: none; color: var(--muted); }
+.qz-field input[type="text"], .qz-field select, .qz-field textarea {
+  width: 100%; font-family: inherit; font-size: 1rem; color: var(--cream);
+  padding: 0.8rem 1rem; border: 1px solid var(--line); border-radius: var(--r);
+  background: oklch(0.14 0.01 55); transition: border-color .25s, box-shadow .25s;
+}
+.qz-field input[type="text"]:focus, .qz-field select:focus, .qz-field textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px oklch(0.835 0.118 86 / 0.18); }
+.qz-field textarea { resize: vertical; min-height: 90px; }
+.qz-field.has-error input[type="text"], .qz-field.has-error select { border-color: oklch(0.70 0.17 35); }
+.qz-err { font-size: 0.8rem; font-weight: 600; color: oklch(0.76 0.15 40); margin-top: 0.35rem; }
+.qz-err:empty { display: none; }
+.qz-count { font-size: 0.72rem; color: var(--muted); text-align: right; margin-top: 0.3rem; }
+.qz-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+.qz-opts { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.qz-opts--big { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+.qz-opt { position: relative; cursor: pointer; }
+.qz-opt input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.qz-opt span { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 44px; padding: 0.5rem 1.1rem; border: 1px solid var(--line-soft); border-radius: 100px; background: oklch(1 0 0 / 0.02); color: var(--cream-dim); font-size: 0.9rem; font-weight: 500; transition: background .2s, color .2s, border-color .2s; user-select: none; }
+.qz-opts--big .qz-opt span { min-height: 62px; border-radius: var(--r); font-size: 1.02rem; font-weight: 600; color: var(--cream); background: var(--metal); }
+.qz-opts--pills .qz-opt span { min-height: 40px; padding: 0.4rem 0.95rem; font-size: 0.8rem; }
+.qz-opt:hover span { border-color: var(--gold); color: var(--cream); }
+.qz-opt input:checked + span { background: var(--gold); color: var(--noir); border-color: var(--gold); font-weight: 600; }
+.qz-opt input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
+.qz-field.has-error .qz-opt span { border-color: oklch(0.70 0.17 35); }
+.qz-submit { width: 100%; justify-content: center; margin-top: 0.4rem; }
+@media (max-width: 600px) {
+  .qz { width: 100%; height: 100%; max-width: 100%; max-height: 100%; margin: 0; }
+  .qz-panel { height: 100%; max-height: none; border: none; border-radius: 0; padding: 1.1rem 1.25rem calc(1.4rem + env(safe-area-inset-bottom)); }
+  .qz-row { grid-template-columns: 1fr; }
+  .qz-opts--big { grid-template-columns: 1fr; }
+  .qz-opts--big .qz-opt span { min-height: 54px; }
+}
+
 /* ============================================================ RESPONSIVE */
 @media (max-width: 980px) {
   .hero-split, .manifesto .wrap, .sec-head-row, .custom-grid, .cap-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
