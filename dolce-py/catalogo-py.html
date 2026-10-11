@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Catálogo Dolce Pasta · Paraguay</title>
+<!--
+  FUENTE del catálogo en PDF de Dolce Pasta Paraguay (catalogo-dolce-pasta.pdf).
+  Se imprime en A4, una sección <section class="pagina"> por hoja.
+  El PDF se genera con: node revision-catalogo-py/generar-pdf.cjs  (desde la raíz del repo)
+  Sin estilos ni scripts inline (CSP de _headers): todo el diseño está en catalogo-py.css.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Young+Serif&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="catalogo-py.css" />
+</head>
+<body>
+
+<!-- ============ 1 · TAPA ============ -->
+<section class="pagina tapa">
+  <header class="tapa-cabeza">
+    <img class="tapa-logo" src="assets/logo-dolce-pasta-dark.webp" alt="Dolce Pasta · Obleas Dulces" />
+    <div class="tapa-edicion">
+      <span>Catálogo de productos</span>
+      <span class="tapa-pais">
+        <svg class="bandera" viewBox="0 0 30 20" role="img" aria-label="Bandera de Paraguay"><rect width="30" height="20" fill="#fff"/><rect width="30" height="6.67" fill="#D52B1E"/><rect y="13.33" width="30" height="6.67" fill="#0038A8"/><circle cx="15" cy="10" r="2.4" fill="none" stroke="#1f7a3d" stroke-width=".8"/><path d="M15 8.2l.52 1.06 1.17.17-.85.83.2 1.16L15 10.9l-1.04.55.2-1.16-.85-.83 1.17-.17z" fill="#e8a01e"/></svg>
+        Paraguay · Edición vigente
+      </span>
+    </div>
+  </header>
+
+  <div class="tapa-texto">
+    <span class="tapa-fondo" aria-hidden="true">obleas</span>
+    <span class="ceja ceja--centro">Obleas dulces premium para heladerías</span>
+    <h1 class="tapa-titulo">El cono que hace <em>premium</em> tu helado.</h1>
+    <p class="tapa-bajada">Distribuidos en todo Paraguay por JCM Import Export, desde Asunción.</p>
+  </div>
+
+  <div class="tapa-conos">
+    <img class="tapa-cono" src="assets/cucurucho.webp" alt="Cucuruchón Dolce Pasta" />
+    <img class="tapa-cono" src="assets/barquillo.webp" alt="Barquillo Dolce Pasta" />
+  </div>
+
+  <footer class="tapa-pie">
+    <img class="tapa-jcm" src="assets/logo-jcm.webp" alt="JCM Import Export S.A." />
+    <div class="tapa-jcm-texto">
+      <b>JCM Import Export S.A.</b>
+      <span>Distribuidor oficial · Asunción</span>
+    </div>
+    <span class="tapa-anio">2026</span>
+  </footer>
+</section>
+
+<!-- ============ 2 · CUCURUCHOS DULCES (1/2) ============ -->
+<section class="pagina">
+  <header class="linea-cabeza">
+    <div>
+      <span class="ceja">Línea tradicional</span>
+      <h2>Cucuruchos Dulces</h2>
+    </div>
+    <span class="linea-cuenta">04 productos</span>
+  </header>
+
+  <article class="ficha">
+    <div class="ficha-foto"><img class="foto-cono" src="assets/cucurucho.webp" alt="Cucuruchón Dolce Pasta" /></div>
+    <div class="ficha-cuerpo">
+      <span class="sello">★ Más vendido</span>
+      <h3>Cucuruchón</h3>
+      <p class="ficha-bajada">El clásico para cono de helado, en tres tamaños.</p>
+      <div class="pildoras"><span class="pildora activa">Grande</span><span class="pildora">Chico</span><span class="pildora">Mini</span></div>
+      <div class="datos">
+        <div class="dato"><span class="k">Grande</span><span class="v">Ø66 · 155mm · 120u/caja</span></div>
+        <div class="dato"><span class="k">Chico</span><span class="v">Ø60 · 145mm · 128u/caja</span></div>
+        <div class="dato"><span class="k">Mini</span><span class="v">Ø56 · 130mm · 160u/caja</span></div>
+        <div class="dato"><span class="k">Pallet</span><span class="v">77 cajas</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="ficha">
+    <div class="ficha-foto"><img class="foto-cono" src="assets/barquillo.webp" alt="Barquillo Dolce Pasta" /></div>
+    <div class="ficha-cuerpo">
+      <span class="sello">★ Más vendido</span>
+      <h3>Barquillos</h3>
+      <p class="ficha-bajada">Cono recto y crocante, medida N° 45. Blister x 4.</p>
+      <div class="pildoras"><span class="pildora activa">N° 45</span></div>
+      <div class="datos">
+        <div class="dato"><span class="k">N° 45</span><span class="v">Ø47 · 157mm · 216u</span></div>
+        <div class="dato"><span class="k">Pallet</span><span class="v">42 cajas</span></div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ============ 3 · CUCURUCHOS DULCES (2/2) ============ -->
+<section class="pagina">
+  <article class="ficha">
+    <div class="ficha-foto"><img class="foto-capelina" src="assets/capelina.webp" alt="Capelina Dolce Pasta" /></div>
+    <div class="ficha-cuerpo">
+      <h3>Capelina</h3>
+      <p class="ficha-bajada">Canastita de oblea para copas y postres.</p>
+      <div class="datos">
+        <div class="dato"><span class="k">Diámetro</span><span class="v">Ø 120 mm</span></div>
+        <div class="dato"><span class="k">Altura</span><span class="v">45 mm</span></div>
+        <div class="dato"><span class="k">Unidades</span><span class="v">80 u / caja</span></div>
+        <div class="dato"><span class="k">Pallet</span><span class="v">70 cajas</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="ficha">
+    <div class="ficha-foto"><img class="foto-oblea" src="assets/oblea.webp" alt="Oblea dulce Dolce Pasta" /></div>
+    <div class="ficha-cuerpo">
+      <h3>Oblea</h3>
+      <p class="ficha-bajada">Oblea dulce para decoración y armado.</p>
+      <div class="datos">
+        <div class="dato"><span class="k">Unidades</span><span class="v">55 × 8 / caja</span></div>
+        <div class="dato"><span class="k">Pallet</span><span class="v">180 cajas</span></div>
+        <div class="dato"><span class="k">Uso</span><span class="v">Versátil</span></div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="pagina-pie"><span>Dolce Pasta · Obleas dulces</span><span>Distribuye JCM Import Export — Asunción</span></footer>
+</section>
+
+<!-- ============ 4 · CUCURUCHOS DE PASTA (1/2) ============ -->
+<section class="pagina">
+  <header class="banda-oscura">
+    <div>
+      <span class="ceja">Nueva variedad</span>
+      <h2>Cucuruchos de Pasta</h2>
+    </div>
+    <div class="etiquetas"><span>Comestible</span><span>Sustentable</span><span>Sin descartables</span></div>
+  </header>
+
+  <article class="ficha">
+    <div class="ficha-foto"><img class="foto-vaso" src="assets/vaso-125.webp" alt="Vaso 125 de pasta Dolce Pasta" /></div>
+    <div class="ficha-cuerpo">
+      <h3>Vaso 125</h3>
+      <p class="ficha-bajada">Vaso comestible de pasta para helado o eventos.</p>
+      <div class="datos">
+        <div class="dato"><span class="k">Capacidad</span><span class="v">125 ml</span></div>
+        <div class="dato"><span class="k">Unidades</span><span class="v">296 u / caja</span></div>
+        <div class="dato"><span class="k">Pallet</span><span class="v">77 cajas</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="ficha">
+    <div class="ficha-foto"><img class="foto-vaso" src="assets/vaso-90.webp" alt="Vaso 90 de pasta Dolce Pasta" /></div>
+    <div class="ficha-cuerpo">
+      <h3>Vaso 90</h3>
+      <p class="ficha-bajada">Vaso de pasta más chico, ideal para porciones.</p>
+      <div class="datos">
+        <div class="dato"><span class="k">Capacidad</span><span class="v">90 ml</span></div>
+        <div class="dato"><span class="k">Unidades</span><span class="v">350 u / caja</span></div>
+        <div class="dato"><span class="k">Pallet</span><span class="v">77 cajas</span></div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ============ 5 · CUCURUCHOS DE PASTA (2/2) ============ -->
+<section class="pagina">
+  <article class="ficha">
+    <div class="ficha-foto"><img class="foto-cero" src="assets/cono-cero.webp" alt="Cono 0 de pasta Dolce Pasta" /></div>
+    <div class="ficha-cuerpo">
+      <h3>Cono 0</h3>
+      <p class="ficha-bajada">Cono de pasta para servir helado.</p>
+      <div class="datos">
+        <div class="dato"><span class="k">Por bolsa</span><span class="v">120 u</span></div>
+        <div class="dato"><span class="k">Por caja</span><span class="v">1.600 u</span></div>
+        <div class="dato"><span class="k">Pallet</span><span class="v">42 cajas</span></div>
+        <div class="dato"><span class="k">Tipo</span><span class="v">Comestible</span></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="ficha">
+    <div class="ficha-foto"><img class="foto-cero" src="assets/vaso-cero.webp" alt="Vaso 0 de pasta Dolce Pasta" /></div>
+    <div class="ficha-cuerpo">
+      <h3>Vaso 0</h3>
+      <p class="ficha-bajada">Vaso de pasta de la línea cero.</p>
+      <div class="datos">
+        <div class="dato"><span class="k">Por bolsa</span><span class="v">120 u</span></div>
+        <div class="dato"><span class="k">Por caja</span><span class="v">1.800 u</span></div>
+        <div class="dato"><span class="k">Pallet</span><span class="v">42 cajas</span></div>
+        <div class="dato"><span class="k">Tipo</span><span class="v">Comestible</span></div>
+      </div>
+    </div>
+  </article>
+
+  <footer class="pagina-pie"><span>Dolce Pasta · Línea de pasta</span><span>Comestible · Sustentable</span></footer>
+</section>
+
+<!-- ============ 6 · CONTACTO ============ -->
+<section class="pagina contacto">
+  <span class="ceja">Hagamos tu pedido</span>
+  <h2 class="contacto-titulo">Sumá Dolce Pasta a tu heladería.</h2>
+  <p class="contacto-bajada">Contanos qué productos te interesan y el volumen aproximado. Coordinamos tu pedido con JCM y el envío a heladerías de todo Paraguay.</p>
+
+  <div class="tarjeta">
+    <img class="tarjeta-logo" src="assets/logo-jcm.webp" alt="JCM Import Export S.A." />
+    <span class="tarjeta-titulo">Distribuidor oficial · Paraguay</span>
+    <dl class="tarjeta-datos">
+      <dt>WhatsApp</dt><dd>+595 981 818555</dd>
+      <dt>Web</dt><dd>jcm.com.py</dd>
+      <dt>Sede</dt><dd>Asunción, Paraguay</dd>
+    </dl>
+  </div>
+
+  <div class="tarjeta">
+    <span class="tarjeta-titulo">Dolce Pasta</span>
+    <dl class="tarjeta-datos">
+      <dt>WhatsApp</dt><dd>+595 992 416378</dd>
+      <dt>Email</dt><dd>dolcepasta.py@gmail.com</dd>
+      <dt>Instagram</dt><dd>@dolcepasta.py</dd>
+      <dt>Web</dt><dd>dolcepastapy.com</dd>
+    </dl>
+  </div>
+
+  <img class="contacto-foto" src="assets/deposito-dolce-pasta.webp" alt="Depósito de Dolce Pasta" />
+
+  <footer class="contacto-pie">
+    <svg class="bandera" viewBox="0 0 30 20" role="img" aria-label="Bandera de Paraguay"><rect width="30" height="20" fill="#fff"/><rect width="30" height="6.67" fill="#D52B1E"/><rect y="13.33" width="30" height="6.67" fill="#0038A8"/><circle cx="15" cy="10" r="2.4" fill="none" stroke="#1f7a3d" stroke-width=".8"/><path d="M15 8.2l.52 1.06 1.17.17-.85.83.2 1.16L15 10.9l-1.04.55.2-1.16-.85-.83 1.17-.17z" fill="#e8a01e"/></svg>
+    Dolce Pasta · Distribuido en Paraguay por JCM Import Export S.A.
+  </footer>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+/* ============================================================
+   DOLCE PASTA PARAGUAY — Catálogo para imprimir (A4)
+   Fuente del PDF catalogo-dolce-pasta.pdf. Una .pagina = una hoja A4.
+   Mismo sistema visual que el sitio: Young Serif · Hanken Grotesk · JetBrains Mono.
+   ============================================================ */
+
+@page { size: A4; margin: 0; }
+
+:root {
+  --paper:      oklch(0.975 0.012 85);
+  --ink:        oklch(0.23 0.022 60);
+  --muted:      oklch(0.49 0.022 62);
+  --espresso:   oklch(0.185 0.018 55);
+  --gold-deep:  oklch(0.64 0.125 65);
+  --peach:      oklch(0.925 0.045 84);
+  --line:       oklch(0.86 0.016 78);
+
+  --font-display: "Young Serif", Georgia, serif;
+  --font-body: "Hanken Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --margen: 5mm;
+  --fondo-hoja: linear-gradient(180deg, #f7f0e0 0%, #f5ebdb 45%, #f2e5d2 100%);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: #d9d2c7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+
+/* ---------- La hoja ---------- */
+.pagina {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  padding: 22px var(--margen) 0;
+  background: var(--fondo-hoja);
+  display: flex;
+  flex-direction: column;
+  break-after: page;
+  page-break-after: always;
+}
+.pagina:last-child { break-after: auto; page-break-after: auto; }
+
+/* En pantalla: hojas separadas, como en el visor de PDF */
+@media screen {
+  .pagina { margin: 24px auto; box-shadow: 0 10px 30px rgba(60, 40, 20, .18); }
+}
+
+/* ---------- Ceja (texto chico con raya) ---------- */
+.ceja {
+  font-family: var(--font-mono);
+  font-size: 11.3px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  display: inline-flex; align-items: center; gap: 0.7em;
+  line-height: 1.2;
+}
+.ceja::before { content: ""; width: 26px; height: 1px; background: currentColor; opacity: 0.6; }
+
+/* ============ 1 · TAPA ============ */
+/* Fondo de la tapa: brillo cálido detrás de los conos, sin transparencias
+   (un degradé con transparencia sale rosado en algunos visores de PDF). */
+.tapa {
+  padding-top: 25px;
+  background: radial-gradient(ellipse 75% 50% at 50% 62%, #f2e2c6 0%, #f3e8d6 45%, #f6eedf 80%, #f7f0e0 100%);
+}
+.tapa-cabeza { display: flex; justify-content: space-between; align-items: flex-start; }
+.tapa-logo { width: 319px; height: auto; }
+.tapa-edicion {
+  display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+  font-family: var(--font-mono); font-size: 11.3px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--muted); padding-top: 2px;
+}
+.tapa-pais { display: inline-flex; align-items: center; gap: 6px; }
+.bandera { width: 27px; height: auto; border-radius: 3px; box-shadow: 0 1px 2px rgba(0, 0, 0, .25); }
+
+.tapa-texto { position: relative; text-align: center; margin-top: 48px; }
+.tapa-fondo {
+  position: absolute; left: 50%; top: 2px; transform: translateX(-50%);
+  font-family: var(--font-display); font-size: 200px; line-height: 1;
+  color: oklch(0.92 0.02 75); opacity: 0.6; letter-spacing: -0.03em;
+  white-space: nowrap; z-index: 0;
+}
+.tapa-texto > *:not(.tapa-fondo) { position: relative; z-index: 1; }
+.ceja--centro { justify-content: center; }
+.tapa-titulo {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 53.3px; line-height: 1.05; letter-spacing: -0.01em;
+  margin-top: 30px;
+}
+.tapa-titulo em { font-style: normal; color: var(--gold-deep); }
+.tapa-bajada {
+  font-size: 16px; line-height: 1.55; color: var(--muted);
+  max-width: 445px; margin: 14px auto 0;
+}
+
+.tapa-conos {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center; gap: 24px;
+}
+.tapa-cono {
+  width: 180px; height: auto;
+  filter: drop-shadow(0 34px 34px oklch(0.4 0.06 55 / 0.30));
+}
+.tapa-cono + .tapa-cono { margin-top: -60px; }
+
+.tapa-pie {
+  display: flex; align-items: center; gap: 12px;
+  border-top: 1px solid #d7d0c6;
+  padding: 18px 0 26px;
+}
+.tapa-jcm { width: 76px; height: auto; }
+.tapa-jcm-texto { display: flex; flex-direction: column; line-height: 1.15; }
+.tapa-jcm-texto b { font-weight: 600; font-size: 14.7px; }
+.tapa-jcm-texto span {
+  font-family: var(--font-mono); font-size: 10.7px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--muted); margin-top: 3px;
+}
+.tapa-anio { margin-left: auto; font-family: var(--font-display); font-size: 21.3px; color: var(--gold-deep); }
+
+/* ============ Cabeceras de línea ============ */
+.linea-cabeza {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  border-bottom: 2px solid var(--ink);
+  padding: 2px 0 13px;
+  margin-bottom: 29px;
+}
+.linea-cabeza h2 {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 29.3px; line-height: 1; margin-top: 18px;
+}
+.linea-cuenta {
+  font-family: var(--font-mono); font-size: 11.3px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--muted); padding-bottom: 3px;
+}
+
+.banda-oscura {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--espresso); color: var(--paper);
+  border-radius: 13px;
+  padding: 26px 26px 24px 25px;
+  margin-bottom: 30px;
+}
+.banda-oscura .ceja { color: oklch(0.74 0.115 75); }
+.banda-oscura h2 {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 26.7px; line-height: 1; margin-top: 14px;
+}
+.etiquetas { display: flex; gap: 6px; }
+.etiquetas span {
+  font-family: var(--font-mono); font-size: 9.3px; letter-spacing: 0.06em;
+  color: oklch(0.82 0.02 75);
+  border: 1px solid oklch(0.36 0.02 55);
+  border-radius: 100px; padding: 4px 8px;
+}
+
+/* ============ Ficha de producto ============ */
+.ficha {
+  background: var(--paper);
+  border: 1px solid #d7d0c6;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+.ficha-foto {
+  height: 175px;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(ellipse 60% 95% at 50% 62%, oklch(0.94 0.04 84), #f4ece0 78%);
+}
+.ficha-foto img { filter: drop-shadow(0 14px 16px oklch(0.4 0.06 55 / 0.28)); }
+.foto-cono     { height: 168px; width: auto; }
+.foto-capelina { height: 150px; width: auto; }
+.foto-oblea    { height: 150px; width: auto; }
+.foto-vaso     { height: 165px; width: auto; }
+.foto-cero     { height: 156px; width: auto; }
+
+.ficha-cuerpo { padding: 18px 23px 23px; }
+.sello {
+  display: inline-block;
+  font-family: var(--font-mono); font-size: 9.3px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold-deep);
+  background: oklch(0.94 0.035 82);
+  border-radius: 100px; padding: 3px 9px;
+  margin-bottom: 8px;
+}
+.ficha h3 { font-family: var(--font-display); font-weight: 400; font-size: 21.3px; line-height: 1.1; }
+.ficha-bajada { font-size: 12px; color: var(--muted); margin-top: 5px; line-height: 1.4; }
+
+.pildoras { display: flex; gap: 5px; margin-top: 14px; }
+.pildora {
+  font-family: var(--font-mono); font-size: 9.3px; letter-spacing: 0.04em;
+  padding: 4px 8px; border-radius: 100px; border: 1px solid #d7d0c6;
+  color: var(--muted); line-height: 1.3;
+}
+.pildora.activa { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.datos { margin-top: 14px; }
+.dato {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+  border-top: 1px solid #d7d0c6;
+  height: 31.7px; padding-top: 7px;
+  font-family: var(--font-mono);
+}
+.dato .k { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.dato .v { font-size: 12px; font-weight: 500; color: var(--ink); padding-top: 2px; }
+
+/* Pie de las hojas de producto */
+.pagina-pie {
+  margin-top: auto;
+  display: flex; justify-content: space-between;
+  border-top: 1px solid #d7d0c6;
+  padding: 19px 0 30px;
+  font-family: var(--font-mono); font-size: 10.7px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+/* ============ 6 · CONTACTO ============ */
+.contacto { padding-top: 24px; }
+.contacto .ceja { align-self: flex-start; }
+.contacto-titulo {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 34.7px; line-height: 1.04; letter-spacing: -0.01em;
+  max-width: 440px; margin-top: 44px;
+}
+.contacto-bajada { font-size: 16px; line-height: 1.55; color: var(--muted); max-width: 482px; margin-top: 10px; }
+
+.tarjeta {
+  background: rgba(255, 252, 245, .3);
+  border: 1px solid #d7d0c6;
+  border-radius: 16px;
+  padding: 26px 27px 30px;
+  margin-top: 24px;
+}
+.contacto-bajada + .tarjeta { margin-top: 42px; }
+.tarjeta-logo { width: 93px; height: auto; margin-bottom: 20px; }
+.tarjeta-titulo {
+  display: block;
+  font-family: var(--font-mono); font-size: 10.7px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold-deep);
+  margin-top: 6px;
+}
+.tarjeta-datos { display: grid; grid-template-columns: 92px 1fr; row-gap: 17px; margin-top: 22px; align-items: baseline; }
+.tarjeta-datos dt {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
+}
+.tarjeta-datos dd { font-size: 14.7px; color: var(--ink); }
+
+.contacto-foto {
+  width: 100%; height: 227px; object-fit: cover; object-position: 50% 40%; /* el mismo encuadre que el catálogo anterior */
+  border-radius: 16px; margin-top: 14px;
+}
+
+.contacto-pie {
+  margin-top: auto;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 0 0 26px;
+  font-family: var(--font-mono); font-size: 10.7px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--muted);
+}
